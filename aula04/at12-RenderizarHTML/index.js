@@ -7,6 +7,9 @@ const app = express()
 // porta servidor
 const porta = 3600
 
+// define a pasta publica com conteudo estatico(CSS,JS,IMG)
+app.use(express.static('views/public'))
+
 // criar rotas
 app.get('/',(req,res)=>{
     res.status(200)
@@ -15,7 +18,7 @@ app.get('/',(req,res)=>{
 
 app.get('/cadastrar',(req,res)=>{
     res.status(200)
-    res.send('<h1>Cadastrar</h1>')
+    res.sendFile(__dirname+'/views/cadastrar.html')
 })
 
 app.get('/consultar',(req,res)=>{
