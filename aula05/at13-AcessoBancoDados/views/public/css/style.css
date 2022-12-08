@@ -9,41 +9,35 @@ body{
 }
 
 #container{
-    background-color: #000;
-    color: #fff;
+    background-color: #121214;
+    color: #FFF;
     display: grid;
     justify-content: center;
-    align-items: center;
+    align-content: center;
     height: 100vh;
 }
 
 .form-grid{
     display: grid;
-    grid-template-columns: 1fr 1fr ;
+    grid-template-columns: 1fr 1fr;
     gap: 15px;
-    background-color: rgb(58, 58, 58);
-    padding: 20px;
-    border-radius: 10px;
 }
 
 #container form input{
     width: 100%;
     padding: 8px 12px;
-    border-radius: 10px;
-    border: none;
 }
 
 .btn-cadastrar{
-    padding: 8px ;
-    border: none;
+    padding: 8px 12px; 
+    background-color: #46d877;  
     margin: 15px 0px;
-    background-color: rgb(96, 203, 96);
-    border-radius: 5px;
     font-weight: bold;
-    color: #fff;
+    color: #FFF;
     cursor: pointer;
 }
 
 .btn-cadastrar:hover{
-    filter: brightness(1.1);
+    filter: brightness(1.1)
 }
+
