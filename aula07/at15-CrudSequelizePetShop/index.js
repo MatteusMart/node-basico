@@ -4,7 +4,13 @@ const express = require('express')
 // inicializa o express
 const app = express()
 
+// importa o modulo de usuarios
+const user = new require("/model/user")
+
 const porta = 5000;
+
+// define a pasta publica que armazena o conteudo estatico(CSS,JS,IMG)
+app.use(express.static('views/public'))
 
 // Cria uma rota padrao
 app.get('/',(req,res)=>{
