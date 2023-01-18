@@ -5,7 +5,9 @@ const express = require('express')
 const app = express()
 
 // importa o modulo de usuarios
-const user = new require("/model/user")
+const usuario = new require("./model/usuario")
+
+const produto = new require("./model/produto")
 
 const porta = 5000;
 
@@ -22,7 +24,8 @@ app.get('/login',(req,res)=>{
 })
 
 app.get('/cadastrar',(req,res)=>{
-    res.sendFile(__dirname+'/views/cadastrar.html')
+    // comando para inserir usando sequelize
+    res.sendFile(__dirname+'/views/cadastrar-usuarios.html')
 })
 
 app.listen(porta,()=>{
