@@ -14,11 +14,26 @@ document.querySelector('#btn-cadastrar').addEventListener('click',()=>{
         method: "POST",
         body:`nome=${nome}&email=${email}&senha=${senha}`,
         headers:{
-            'Content-type':'aplication/x-www-form-urlencoded'
+            'Content-type':'application/x-www-form-urlencoded'
         }
+    })
         .then(response=>response.json())
         .then(result=>{
             // aqui temos a resposta do backend node
+            if(result.retorno == 'ok'){
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Sucesso!',
+                    text: result.mensagem
+                })
+                document.getElementById('form-usuarios').reset()
+            }else{
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Atenção',
+                    text: result.mensagem
+                  })
+            }
         })
-    })
+    
 })
